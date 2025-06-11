@@ -46,10 +46,11 @@
   <div class="scene">
     <img src="tree-of-life.png" alt="Tree of Life Scene">
 
-    <div class="hotspot" style="top: 30%; left: 70%; width: 50px; height: 50px;" onclick="showTooltip(event, 'tree')"></div>
+    <div class="hotspot" style="top: 35%; left: 72%; width: 50px; height: 50px;" onclick="showTooltip(event, 'tree')"></div>
     <div class="hotspot" style="top: 68%; left: 60%; width: 50px; height: 50px;" onclick="showTooltip(event, 'path')"></div>
     <div class="hotspot" style="top: 30%; left: 10%; width: 50px; height: 50px;" onclick="showTooltip(event, 'building')"></div>
-
+    <div class="hotspot" style="top: 60%; left: 70%; width: 50px; height: 50px;" onclick="showTooltip(event, 'rod')"></div>
+    
     <div id="tooltip" class="tooltip"></div>
   </div>
 
@@ -60,6 +61,7 @@
       tree: 'This glowing tree represents the Tree of Life, a symbol of God\'s love and eternal joy.',
       path: 'The path represents the iron rod or the word of God, guiding us through darkness toward the light.',
       building: 'The dark building in the distance represents the pride of the world and false happiness.'
+      rod: 'Holding onto it helps people stay on the path and not get lost.'
     };
 
     function showTooltip(event, part) {
