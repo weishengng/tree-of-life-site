@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tree of Life Scene</title>
   <style>
     body {
@@ -14,9 +15,8 @@
     .scene {
       position: relative;
       width: 100%;
-      max-width: 100%;
+      height: auto;
       background: #000;
-      overflow-x: hidden;
     }
     .scene img {
       width: 100%;
@@ -29,10 +29,6 @@
       border: 2px solid #fff;
       border-radius: 8px;
       cursor: pointer;
-      width: 8vw;
-      height: 8vw;
-      min-width: 30px;
-      min-height: 30px;
     }
     .tooltip {
       display: none;
@@ -41,25 +37,23 @@
       color: #fff;
       padding: 10px;
       border-radius: 5px;
-      max-width: 80vw;
+      width: 200px;
       z-index: 1000;
-      font-size: 0.9rem;
-      word-wrap: break-word;
     }
   </style>
 </head>
 <body>
   <div class="scene">
-    <img src="tree-of-life.png" alt="Tree of Life Scene" />
+    <img src="tree-of-life.png" alt="Tree of Life Scene">
 
-    <div class="hotspot" style="top: 35%; left: 71%;" onclick="showTooltip(event, 'tree')"></div>
-    <div class="hotspot" style="top: 73%; left: 58%;" onclick="showTooltip(event, 'path')"></div>
-    <div class="hotspot" style="top: 30%; left: 10%;" onclick="showTooltip(event, 'building')"></div>
-    <div class="hotspot" style="top: 50%; left: 70%;" onclick="showTooltip(event, 'rod')"></div>
-    <div class="hotspot" style="top: 50%; left: 20%;" onclick="showTooltip(event, 'river')"></div>
-    <div class="hotspot" style="top: 30%; left: 50%;" onclick="showTooltip(event, 'darkness')"></div>
-
-    <div id="tooltip" class="tooltip" role="tooltip"></div>
+    <div class="hotspot" style="top: 35%; left: 71%; width: 50px; height: 50px;" onclick="showTooltip(event, 'tree')"></div>
+    <div class="hotspot" style="top: 73%; left: 58%; width: 50px; height: 50px;" onclick="showTooltip(event, 'path')"></div>
+    <div class="hotspot" style="top: 30%; left: 10%; width: 50px; height: 50px;" onclick="showTooltip(event, 'building')"></div>
+    <div class="hotspot" style="top: 50%; left: 70%; width: 50px; height: 50px;" onclick="showTooltip(event, 'rod')"></div>
+    <div class="hotspot" style="top: 50%; left: 20%; width: 50px; height: 50px;" onclick="showTooltip(event, 'river')"></div>
+    <div class="hotspot" style="top: 30%; left: 50%; width: 50px; height: 50px;" onclick="showTooltip(event, 'darkness')"></div>
+    
+    <div id="tooltip" class="tooltip"></div>
   </div>
 
   <script>
@@ -77,17 +71,13 @@
     function showTooltip(event, part) {
       tooltip.style.display = 'block';
       tooltip.innerText = descriptions[part];
-
-      const scrollX = window.scrollX || 0;
-      const scrollY = window.scrollY || 0;
-      const x = event.pageX + 20 + scrollX;
-      const y = event.pageY + 20 + scrollY;
-
+      const x = event.pageX + 20;
+      const y = event.pageY + 20;
       tooltip.style.left = x + 'px';
       tooltip.style.top = y + 'px';
     }
 
-    document.body.addEventListener('click', function (event) {
+    document.body.addEventListener('click', function(event) {
       if (!event.target.classList.contains('hotspot')) {
         tooltip.style.display = 'none';
       }
